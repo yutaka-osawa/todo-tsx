@@ -1,6 +1,12 @@
 import React from "react";
 import {Props} from "next/script";
 
+type Props = () => {
+    todoText: string,
+    onChangeTodoText: React.ChangeEvent<HTMLInputElement>;
+    onClickAdd: () => void;
+}
+
 const InputTodo = (props: Props) => {
     const { todoText, onChangeTodoText, onClickAdd} = props;
     return(

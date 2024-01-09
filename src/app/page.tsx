@@ -43,12 +43,12 @@ const Todo = () => {
 
   return(
       <>
-          <div className={"w-400 h-30 p-8 m-8 rounded-xl bg-blue-100"}>
+          <div className={"w-auto h-30 p-8 m-8 rounded-xl bg-blue-100"}>
               <input className={"border-none rounded-xl p-4"} placeholder={"TODOを入力"} value={todoText} onChange={onChangeTodoText}/>
               <button className={"p-2 m-2 rounded-xl border-none bg-gray-300 hover:bg-amber-50"} onClick={onClickAdd}>追加</button>
           </div>
           {/*<InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}/>*/}
-        <div className={"w-400 h-30 p-8 m-8 rounded-xl border-2 border-blue-300"}>
+        <div className={"w-auto h-30 p-8 m-8 rounded-xl border-2 border-blue-300"}>
             <p className={"flex justify-center font-bold"}>未完了のTODO</p>
             <ul>
                 {incompleteTodos.map((todo, index) => {
@@ -64,7 +64,7 @@ const Todo = () => {
                 })}
             </ul>
         </div>
-        <div className={"w-400 h-30 p-8 m-8 rounded-xl border-2 border-blue-300 bg-gray-200"}>
+        <div className={"w-auto h-30 p-8 m-8 rounded-xl border-2 border-blue-300 bg-gray-200"}>
             <p className={"flex justify-center font-bold"}>完了のTODO</p>
             <ul>
                 {completeTodos.map((todo, index) => {
