@@ -5,8 +5,10 @@ import InputTodo from "@/app/components/InputTodo";
 
 const Todo = () => {
     const [todoText, setTodoText] = useState("");
-    const [incompleteTodos, setIncompleteTodos] = useState(["TODO1", "TODO2"]);
-    const [completeTodos, setCompleteTodos] = useState(["TODO1", "TODO2"]);
+
+    const [incompleteTodos, setIncompleteTodos] = useState<string[]>([]);
+
+    const [completeTodos, setCompleteTodos] = useState<string[]>([]);
 
     const onChangeTodoText = (event:React.ChangeEvent<HTMLInputElement>) => setTodoText(event.target.value);
 
@@ -43,11 +45,11 @@ const Todo = () => {
 
   return(
       <>
-          <div className={"w-auto h-30 p-8 m-8 rounded-xl bg-blue-100"}>
-              <input className={"border-none rounded-xl p-4"} placeholder={"TODOを入力"} value={todoText} onChange={onChangeTodoText}/>
-              <button className={"p-2 m-2 rounded-xl border-none bg-gray-300 hover:bg-amber-50"} onClick={onClickAdd}>追加</button>
-          </div>
-          {/*<InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}/>*/}
+          {/*<div className={"w-auto h-30 p-8 m-8 rounded-xl bg-blue-100"}>*/}
+          {/*    <input className={"border-none rounded-xl p-4"} placeholder={"TODOを入力"} value={todoText} onChange={onChangeTodoText}/>*/}
+          {/*    <button className={"p-2 m-2 rounded-xl border-none bg-gray-300 hover:bg-amber-50"} onClick={onClickAdd}>追加</button>*/}
+          {/*</div>*/}
+          <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}/>
         <div className={"w-auto h-30 p-8 m-8 rounded-xl border-2 border-blue-300"}>
             <p className={"flex justify-center font-bold"}>未完了のTODO</p>
             <ul>

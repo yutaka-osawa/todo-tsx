@@ -1,13 +1,13 @@
 import React from "react";
-import {Props} from "next/script";
+import InputTodoProps from "next/script";
 
-type Props = () => {
+type InputTodoProps = {
     todoText: string,
-    onChangeTodoText: React.ChangeEvent<HTMLInputElement>;
+    onChangeTodoText: React.ChangeEventHandler<HTMLInputElement>;
     onClickAdd: () => void;
 }
 
-const InputTodo = (props: Props) => {
+const InputTodo = (props: InputTodoProps) => {
     const { todoText, onChangeTodoText, onClickAdd} = props;
     return(
         <div className={"w-400 h-30 p-8 m-8 rounded-xl bg-blue-100"}>
